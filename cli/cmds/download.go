@@ -57,12 +57,14 @@ func downloadAction(c *cli.Context) error {
 		return nil
 	}
 
+	root := "kc"
+
 	sub := "MP4"
 	if course.IsColumn() {
 		sub = "MP3"
 	}
 
-	path, err := utils.Mkdir(utils.FileName(course.ColumnTitle, ""), sub)
+	path, err := utils.Mkdir(root, utils.FileName(course.ColumnTitle, ""), sub)
 
 	errors := make([]error, 0)
 	for _, datum := range downloadData.Data {
@@ -80,7 +82,7 @@ func downloadAction(c *cli.Context) error {
 
 	//如果是专栏，则需要打印内容
 	if course.IsColumn() {
-		path, err := utils.Mkdir(utils.FileName(course.ColumnTitle, ""), "PDF")
+		path, err := utils.Mkdir(root, utils.FileName(course.ColumnTitle, ""), "PDF")
 		if err != nil {
 			return err
 		}

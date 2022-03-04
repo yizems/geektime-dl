@@ -174,4 +174,4 @@ $ geektime-dl login --gcid xxxxxx --gcess xxxxxx --serverId 'xxxxxxx'
 
 MIT
 
-Copyright (c) 2020-present, mmzou
+Copyright (
